@@ -15,7 +15,9 @@ Open your terminal or command prompt and execute the following commands:
 - Scripts\activate.bat
 - cd GPproject
 - python manage.py runserver
-- 
+  
 This will activate your virtual environment, navigate to the project directory, and start the development server.
+
+then you will take the URL which he will send to you and put it in any browser
 
 The project should now be running. Enjoy!
