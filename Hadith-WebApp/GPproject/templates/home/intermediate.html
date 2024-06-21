@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estedlal chat</title>
+
+    {% comment %} <link rel="stylesheet" href="intermediate-page.css"> {% endcomment %}
+    {% comment %} <link href="{% static 'css/intermediate.css' %}?v=1" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="{% static 'css/intermediate.css' %}?v=1" rel="stylesheet"> {% endcomment %}
+    <link href="{% static 'css/intermediate-page.css' %}?v=1" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Estedlale</h2>
+        <a  href="{% url  'home' %}">
+            <button class="logoutBtn" type="button" onclick="click()">Log out</button>
+        </a>
+    </header>
+    <div class="container">
+        <div class="card1">
+            <div class="content">
+                <h2>Sunnah</h2>
+                <h3>Sunnah</h3>
+                <p>Search in the hadiths using a question,  Research statement, phrase, or   word</p>
+                <a  href="{% url 'answer' %}">
+                    <input type="submit" vlaue="Let's search"> 
+                </a>
+            </div>
+        </div>
+
+        <div class="card2">
+            <div class="content">
+                <h2>the authentication of Hadiths</h2>
+                <h3>the authentication of Hadiths</h3>
+                <p>Search for the authenticity of Hadiths by investigating the chain of narration.</p>
+                <a href="{% url 'predict' %}">
+                    <input type="submit" vlaue="Let's search"> 
+                </a>
+            </div>
+        </div>
+    </div>
+    {% comment %} <script src="{% static 'js/Estidlale.js' %}?v=1"></script> {% endcomment %}
+    <script type="text/javascript" src="{% static 'js/vanilla-tilt.js' %}?v=1"></script>
+    {% comment %} <script type="text/javascript" src="vanilla-tilt.js"></script> {% endcomment %}
+<script>
+    VanillaTilt.init(document.querySelectorAll(".card1"), 
+    {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 1,
+	});
+    VanillaTilt.init(document.querySelectorAll(".card2"), 
+    {
+		max: 25,
+		speed: 400,
+        glare: true,
+        "max-glare": 1,
+	});
+</script>
+</body>
+</html>

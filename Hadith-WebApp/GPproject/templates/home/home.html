@@ -1,0 +1,566 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Estidlal</title>
+    <link rel="icon" type="image/png" href="{% static 'img\logo.png' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <!-- تأكد من تضمين مكتبة الأيقونات -->
+         <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://kit.fontawesome.com/8578471d28.js" crossorigin="anonymous"></script>
+
+    {% comment %} <link rel="stylesheet" href="Estidlale.css"> {% endcomment %}
+    <link href="{% static 'css/Estidlale.css' %}?v=1" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+
+    
+    <style>
+
+
+
+
+       
+
+      
+        .alert-secondary {
+            background-color: white; /* خلفية بيضاء */
+            color: black; /* نص أسود */
+            border-bottom: 3px solid red; /* خط أسفل بلون أحمر */
+            height: 50px;
+            width: 350px;
+            margin-top: 435px;
+             margin-left: 700px; 
+            position: relative;
+            overflow: hidden; /* لإخفاء أي جزء من الحدود الخارجية */
+            display: flex;
+            align-items: center; /* لمحاذاة النص والصورة عمودياً */
+        }
+        
+        .icon-container {
+            margin-right: 10px; /* تحديد هامش من اليمين بين النص والصورة */
+        }
+        
+        .icon-container img {
+            vertical-align: middle; /* لمحاذاة الصورة بشكل منتصفي داخل العنصر */
+        }
+        
+        .color-bar {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: red;
+            animation: moveLeft 5s linear forwards; /* حركة اللون من اليمين للشمال */
+        }
+        
+        @keyframes moveLeft {
+            100% {
+                width: 0;
+            }
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div id="alertBox"></div>
+        <div class="divided" style="display: flex; align-items: center; height: 60px;">
+            <div class="bx bx-menu" id="menu-icon"></div>
+            <div class="logo">Estedlal</div>
+            <ul class="navbar" style="display: flex; list-style: none; margin: 0; padding: 0;">
+                <li><a href="#home" style="padding: 10px;">home</a></li>
+                <li><a href="#log in" style="padding: 10px;">sign in</a></li>
+                <li><a href="#about us" style="padding: 10px;">about us</a></li>
+                <li><a href="#contact us" style="padding: 10px;">contact us</a></li>
+                <li><a href="#our services" style="padding: 10px;">our services</a></li>
+                <li><a href="#hadith" style="padding: 10px;">hadith</a></li>
+            </ul>
+        </div>
+    </header>
+    
+        
+        
+        
+   
+            {% comment %} <div class='divided' style='flex;'>
+      
+        <div  class="bx bx-menu" id="menu-icon"></div>
+        <a class="logo">Estedlal</a>
+        <ul class="navbar">
+
+
+      
+            
+            <li ><a  href="#home">home</a></li>
+            <li><a href="#log in">sign in</a></li>
+            <li><a href="#about us">about us</a></li>
+            <li><a href="#contact us">contact us</a></li>
+            <li><a href="#our services">our services</a></li>
+            <li><a href="#hadith">hadith</a></li>
+
+        </ul>
+
+    </div> {% endcomment %}
+  
+    
+    <!--home section-->
+    <section class="home" id="home" > 
+  
+
+    </section>
+            
+    <!--log in section-->
+    <section class="log in" id="log in" > 
+        <div class="container">
+            <div class="content-of-container">
+                <div class="text-sci">
+                    <h2 style="color: white;">Welcome ! <br>to our website</h2>
+                </div>
+            </div>
+            
+            <div class="logreg-box">
+                <div class="form-box login" id="gotoalert">
+                    {% comment %} <form method="POST" action="{% url 'login'   %}"> {% endcomment %}
+                    <form method="POST" action="{% url 'login' %}" >
+                        {% csrf_token %}
+                        
+                        <h2>Sign In</h2>
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="bx bxs-envelope"></i>
+                            </span>
+                            <input type="email" name="email"  id="email" required>
+                            <label>Email</label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="bx bxs-lock-alt"></i>
+                            </span>
+                            <input type="password" name="password" id="password" required>
+                            <label>Password</label>
+                        </div>
+                        <input class="loginBtn" type="submit" value="Sign In">
+                        {% comment %} <button class="loginBtn" type="button" onclick="auth()">Sign In</button> {% endcomment %}
+    
+                        <div class="login-register">
+                            <p>Don't have an account? 
+                                <a class="register-link" style="cursor: pointer;">Sign up</a>
+                            </p>
+                        </div>  
+                    </form>
+                </div>
+    
+                <div id="alertBox"></div>
+    
+    
+                <div class="form-box register">
+                   
+                   
+                    <form method="POST" onsubmit="return validatePassword()">
+                        {% csrf_token %}
+
+
+                        <h2>Sign Up</h2>
+    
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="bx bxs-user"></i>
+                            </span>
+                            <input type="text" name="username" required>
+                            <label>User Name</label>
+                        </div>
+                        
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="bx bxs-envelope"></i>
+                            </span>
+                            <input type="email" name="email" required>
+                            <label>Email</label>
+                        </div>
+    
+                        <div class="input-box">
+                            <span class="icon">
+                                <i class="bx bxs-lock-alt"></i>
+                            </span>
+                            <input id="password1" type="password" name="password" required>
+                            <label>Password</label>
+                        </div>
+                        <input  class="signupBtn" type="submit" value="Sign up">
+                        {% comment %} <button class="signupBtn">Sign up</button> {% endcomment %}
+    
+                        <div class="login-register">
+                            <p>Already have an account? 
+                                <a class="login-link" style="cursor: pointer;">Sign In</a>
+                            </p>
+                        </div>
+                
+                   
+                   
+                    </form>
+
+            
+
+                </div>
+            </div>
+
+
+            {% if error_message %}
+            <div class="alert alert-secondary " id="myAlert" role="alert">
+                <div class="icon-container">
+                    <img src="{%static 'img/cancel.png'%}" alt="Your Image" width="30" height="30">
+                </div>
+            <span style="color: black;font-size: 14px;margin-botton: 40px;">{{error_message}}</span>
+           
+            <div class="color-bar"></div>
+            </div>
+            <script>
+                function goToElementById(elementId) {
+                  // احصل على عنصر الصفحة باستخدام الـ ID المعطى
+                  var element = document.getElementById(elementId);
+                  
+                  // تحقق مما إذا كان العنصر موجودًا
+                  if (element) {
+                      // قم بتمرير العنصر إلى دالة scrollIntoView للتمرير إليه
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                      console.log('العنصر غير موجود');
+                  }
+              }
+              window.onload = function() {
+                // تأخير تشغيل السكريبت بمقدار 500 ميلي ثانية (نصف ثانية)
+                setTimeout(function() {
+                    // استدعاء الدالة للتمرير إلى العنصر بعد انتهاء التأخير
+                    goToElementById('gotoalert');
+                }, 500);
+              };
+              
+              
+              </script>
+
+            {% endif %}
+
+
+
+            {% if return_url %}
+
+
+            <div class="alert alert-secondary " id="myAlert" role="alert">
+                <div class="icon-container">
+                    <img src="{%static 'img/cancel.png'%}" alt="Your Image" width="30" height="30">
+                </div>
+            <span style="color: black;font-size: 14px;margin-botton: 40px;">{{return_url}}</span>
+           
+            <div class="color-bar"></div>
+            </div>
+            <script>
+                function goToElementById(elementId) {
+                  // احصل على عنصر الصفحة باستخدام الـ ID المعطى
+                  var element = document.getElementById(elementId);
+                  
+                  // تحقق مما إذا كان العنصر موجودًا
+                  if (element) {
+                      // قم بتمرير العنصر إلى دالة scrollIntoView للتمرير إليه
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                      console.log('العنصر غير موجود');
+                  }
+              }
+              window.onload = function() {
+                // تأخير تشغيل السكريبت بمقدار 500 ميلي ثانية (نصف ثانية)
+                setTimeout(function() {
+                    // استدعاء الدالة للتمرير إلى العنصر بعد انتهاء التأخير
+                    goToElementById('gotoalert');
+                }, 500);
+              };
+              
+              
+              </script>
+        
+            {% endif %}
+            
+
+
+        </div>
+    </section>
+    <!--about us section-->
+    <section class="about us" id="about us">
+        <div class="about-img">
+            <img src="{% static 'img/sebha-about us.png' %}" alt='' > 
+            {% comment %} <img src="sebha-about us.png" alt=""> {% endcomment %}
+        </div>
+
+        <div class="about-text">
+            <h2>The <span>Estidlal</span> website aims to use artificial intelligence techniques to extract accurate answers to questions related to the Quran and Sunnah.
+            </h2>
+            <p>The website integrates modern technology to provide an effective solution 
+                to the challenges of researching in authoritative sources.
+            </p>
+            <p>
+                The website also aims to enhance the experience of researchers and students of knowledge 
+                in extracting accurate and reliable answers from the Quran and Sunnah.
+            </p>
+        </div>
+    </section>
+
+    
+    <!--contact us section-->
+    <section class="contact us" id="contact us">
+        <div class="heading">
+            <span>contact us</span>
+            <h1>
+                Head Supervisor : Dr.Ensaf Hussein
+            </h1>
+            <h2>
+                Ph.D Computer Science 10 years of experience in NLP
+            </h2>            
+        </div>
+
+        <div class="contact_box">
+            <div class="profile">
+               <img src="{% static 'img/zakaria.jpeg' %}" >  
+                {% comment %} <img src="zakaria.jpeg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Mohamed Zakaria</h2>
+                    <a href="mailto:dev.zakarya@gmail.com">dev.zakarya@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'img/moheamed-ashraf.jpg' %}" > 
+                {% comment %} <img src="moheamed-ashraf.jpg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Mohamed Ashraf</h2>
+                    <a href="mailto:m.ashraf.20162002@gmail.com">m.ashraf.20162002@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'img/marwa-asaad.jpeg' %}" > 
+                {% comment %} <img src="marwa-asaad.jpeg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Marwa Asaad</h2>
+                    <a href="mailto:marwaas3d@gmail.com">marwaas3d@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'img/maher.jpeg' %}" > 
+                {% comment %} <img src="maher.jpeg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Mohamed Maher</h2>
+                    <a href="mailto:mohamedmaher15320003@gmail.com">mohamedmaher15320003@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'img/mostafa.jpg' %}" > 
+                {% comment %} <img src="mostafa.jpg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Mostafa Kamal</h2>
+                    <a href="mailto:Mostafakamal2252002@gmail.com">Mostafakamal2252002@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="{% static 'img/ahmed ashraf.jpeg' %}" > 
+                {% comment %} <img src="ahmed ashraf.jpeg"> {% endcomment %}
+                <div class="info">
+                    <h2 class="name">Ahmed Ashraf</h2>
+                    <a href="mailto:ahmedashraft7@gmail.com">ahmedashraft7@gmail.com</a>
+                    <div class="contact_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+        <!--our-services section-->
+        <section class="our services" id="our services">
+        <div class="design">
+            <div class="cover cover-left"></div>
+            <div class="cover cover-right"></div>
+
+                <div class="book">
+                    <div class="book-page page-left">
+                        <div class="first-page">
+                            <img src="{% static 'img/sunnah.png' %}" alt='' >
+                    {% comment %} <img src="sunnah.png" alt=""> {% endcomment %}
+                    <h1>Sunnah</h1>
+                    <h3>اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَامُحَمد ﷺ</h3>
+                    <p>Finding intelligent solutions for Hadith research using a question, phrase, or word,
+                        facilitating and speeding up the search process in religious sources
+                    </p>
+                        </div>
+                    </div> 
+            
+                    <div class="book-page page-right turn" id="turn-1">
+                        <div class="page-front">
+                            <img src="{% static 'img\esnad.png' %}" alt='' >
+                            {% comment %} <img src="quraan.png" alt=""> {% endcomment %}
+                            <h1>the authentication of Hadiths</h1>
+                            <p>
+                                Providing accurate and reliable answers to Quranic questions and enhancing the experience 
+                                of students and researchers in the field of Islamic studies.
+                            </p>
+
+                            <span class="nextprev-btn" data-page="turn-1">
+                            <i class='bx bx-chevron-right'></i>
+                            </span>
+                        </div>
+                    <!--2-->
+                    <div class="page-back">
+                        <h2>
+                            Providing a reliable source of legitimate information, promoting accurate understanding of the Islamic religion,
+                            and offering answers based on original Sharia texts.
+                        </h2>
+                        <p>_________________</p>
+                        <h3>
+                            We provide a search tool for religious texts, including the entire the authentication of Hadiths and Sunnah from the six authentic collections of Sahih books. We offer accurate and prompt answers to religious questions regarding Hadiths, 
+                            aiming to enhance understanding of the religious context and expedite responses.
+                        <p>______________</p>
+                        <h4>
+                            We contribute to promoting accurate understanding of the Islamic religion 
+                            and providing answers based on the original Sharia texts.
+                        </h4>
+                        <span class="nextprev-btn back" data-page="turn-1">
+                            <i class='bx bx-chevron-left'></i>
+                        </span>
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+
+        </section>
+
+
+        <!--hadith section-->
+        <section class="hadith" id="hadith">
+            <div class="wrapper">
+                <div class="content">
+                    <div class="hadith-area">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="hadithh">سيأتيكُم أقوامٌ يطلبونَ العِلمَ فإذا 
+                        رأيتُموهم فقولوا لَهُم مَرحبًا 
+                        مَرحبًا بوصيَّةِ رسولِ اللَّهِ صلَّى اللَّهُ عليهِ وسلَّمَ واقْنوهُم
+                    </p>
+                    <i class="fas fa-quote-right"></i>
+                    </div>
+                        <div class="author">
+                            <span>__
+                                <span class="name">اللهم صّلِ وسَلّمْ عَلۓِ نَبِيْنَامُحَمد ﷺ
+                                </span>
+                            </span>
+                        </div>
+                </div>
+                <div class="buttons">
+                    <div class="features">
+
+                        <button class="newhadithBtn">New Hadith</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script src="{% static 'js/Estidlale.js' %}?v=1"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script>src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"</script>
+    {% comment %} <script src="Estidlale.js"></script> {% endcomment %}
+    <!-- فوق النهاية المفتوحة لل body -->
+    <script>
+        function validatePassword() {
+             var password = document.getElementById("password1").value;
+             if (password.length < 8) {
+                 alert("Password must be at least 8 characters long.");
+                 return false; // توقف عن إرسال النموذج
+             }
+             return true; // استمر في إرسال النموذج
+         } 
+
+         
+
+      
+     </script>
+
+    
+     <script>
+        $(document).ready(function() {
+          setTimeout(function() {
+            $(".alert-secondary").fadeOut(); // إخفاء الـ alert باستخدام fadeOut
+          }, 5000); // بعد 5 ثواني (5000 مللي ثانية)
+        });
+      </script>
+     
+     <script>
+
+        $(document).ready(function(){
+
+           
+
+            // تأخير بدء حركة اللون الأحمر بعد 1 ثانية
+            setTimeout(function(){
+                $(".color-bar").addClass("move-left");
+            }, 1000); // 1000 مللي ثانية = 1 ثانية
+    
+
+
+            
+        });
+    </script>
+
+
+ 
+<script>
+ 
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('show');
+          }
+
+
+
+        </script>
+
+
+</body>
+</html>

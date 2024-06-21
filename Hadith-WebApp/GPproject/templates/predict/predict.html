@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the authentication of Hadiths</title>
+    {% comment %} <link rel="stylesheet" href="the authentication of Hadiths.css"> {% endcomment %}
+    <link href="{% static 'css/predict.css' %}?v=1" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Estedlale</h2>
+    </header>
+    <div class="container bootstrap snippets bootdeys">
+        <div class="col-md-7 col-xs-12 col-md-offset-2">
+          <!-- Panel Chat -->
+          <div class="panel" id="chat">
+            <div class="panel-heading" style="display: flex; align-items: center;">
+                <div style="flex-grow: 1;"></div> <!-- This div will push the image to the right -->
+                <a href="{% url 'haraka' %}" style="top: 5px; right: 0; position: absolute;">
+                    <img src="{% static 'img/logout.png' %}" alt="Logout" style="margin-right: 25px;" class="logout-icon">
+                </a>
+                
+                {% comment %} <a style="margin-left: 1250px;" href="">
+                  <img  alt="Logout">
+              </a> {% endcomment %}
+            </div>
+            <div class="panel-body">
+                <!-- Your panel body content here -->
+            </div>
+        </div>
+<div class="content">
+    <form method="POST" onsubmit="return validatePassword()">
+        {% csrf_token %}
+        <h1>Search for the authentication of Hadiths</h1>
+        <input  class="largeArea" type="text" name="questionpredict" id="userInput" placeholder="Ask Estidlale" required >
+      
+        <div class="button">
+            
+            <input type="submit" value="Search" onclick="search()">
+        </div>
+        {% block content %}
+        {% if predict %}
+        <h2 id="message">{{ predict }}</h2>
+        {% endif %} 
+        {% endblock %}
+    </form>
+
+    
+    {% comment %} <textarea id="userInput" placeholder="Ask Estidlale"></textarea> <br> <br> <br> {% endcomment %}
+
+   
+
+</div>
+
+
+
+    <script>
+        function search() {
+            let userInput = document.querySelector("#userInput");
+            let message = document.querySelector("#message");
+            message.innerHTML = "the hadith is ";
+            
+            // Create the dots element
+            let dots = document.createElement("span");
+            dots.classList.add("dots");
+            
+            // Append the dots element to the message
+            message.appendChild(dots);
+            }
+    </script>
+</body>
+</html>
